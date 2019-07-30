@@ -1,0 +1,25 @@
+<h1> All Tasks </h1>
+
+<div class="task-container">
+  <%@tasks.each do |task| %>
+
+    <div class="task">
+      <h2><%= task.title %></h2>
+    </div>
+
+    <div class="page-show">
+     <%= link_to "Show Page", task_path(task.id) %>
+    </div>
+    <br>
+    <div class="delete-btn">
+      <%= link_to "Delete Task", task_path(task.id), data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
+    <br>
+  <% end %>
+  <br>
+</div>
+
+
+<%= link_to "Create NEW Task", new_task_path %>
+
+
